@@ -21,7 +21,7 @@ export class UserRepository {
       'firstname',
       'lastname',
       'email',
-      'mobile',
+      'mobileNumber',
       'nationalId',
       'createdAt',
       'updatedAt',
@@ -33,7 +33,7 @@ export class UserRepository {
       firstname: 'u.firstname',
       lastname: 'u.lastname',
       email: 'u.email',
-      mobile: 'u.mobile',
+      mobileNumber: 'u.mobileNumber',
       nationalId: 'u.nationalId',
       createdAt: 'u.createdAt',
       updatedAt: 'u.updatedAt',
@@ -74,7 +74,7 @@ export class UserRepository {
   findById(id: number) {
     return this.repo.findOne({
       where: { id },
-      relations: ['userGroup', 'mobiles', 'phones', 'relativeMobiles'],
+      relations: ['userGroup'],
     });
   }
 

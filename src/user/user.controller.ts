@@ -37,7 +37,7 @@ export class UserController {
     'firstname',
     'lastname',
     'email',
-    'mobile',
+    'mobileNumber',
     'nationalId',
   ];
 

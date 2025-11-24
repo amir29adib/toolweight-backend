@@ -1,24 +1,16 @@
 import {
   IsInt,
-  IsOptional,
   IsString,
   IsEmail,
   Length,
   IsDateString,
   MinLength,
   IsEnum,
-  IsArray,
-  ValidateNested,
   IsMobilePhone,
-  IsNumber,
   IsBoolean,
 } from 'class-validator';
 import { GenderEnum } from '../enums/gender.enum';
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { UserMobileDto } from './user-mobile.dto';
-import { UserRelativeMobileDto } from './user-mobile-relative.dto';
-import { UserPhoneDto } from './user-phone.dto';
-import { Type } from 'class-transformer';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateUserDto {
   @ApiProperty()

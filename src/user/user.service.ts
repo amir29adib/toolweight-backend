@@ -58,23 +58,8 @@ export class UserService {
       birthdate: dto.birthdate,
       gender: dto.gender,
       mobileNumber: dto.mobileNumber,
-      educationEvidence: dto.educationEvidence,
-      university: dto.university,
-      addressX: dto.addressX,
-      addressY: dto.addressY,
       address: dto.address,
       status: dto.status,
-      mobiles: dto.mobiles?.map((m) => ({
-        mobile: m.mobile,
-      })),
-      phones: dto.phones?.map((p) => ({
-        phone: p.phone,
-      })),
-      relativeMobiles: dto.relativeMobiles?.map((r) => ({
-        name: r.name,
-        relationship: r.relationship,
-        mobile: r.mobile,
-      })),
     });
 
     let user = await this.users.save(entity);
@@ -89,17 +74,7 @@ export class UserService {
       user.profile = objectKey;
     }
 
-    if (dto.signature) {
-      const { objectKey } = await this.filesService.copyTmpFileToObjectStorage(
-        'user-signature',
-        dto.signature,
-        user.id,
-      );
-
-      user.signature = objectKey;
-    }
-
-    if (dto.profile || dto.signature) {
+    if (dto.profile) {
       user = await this.users.save(user);
     }
 
@@ -140,40 +115,7 @@ export class UserService {
       user.profile = objectKey;
     }
 
-    if (dto.signature) {
-      const { objectKey } = await this.filesService.copyTmpFileToObjectStorage(
-        'user-signature',
-        dto.signature,
-        user.id,
-      );
-      user.signature = objectKey;
-    }
-
-    if (dto.mobiles) {
-      user.mobiles =
-        dto.mobiles.map((m) => ({
-          mobile: m.mobile,
-        })) ?? [];
-    }
-
-    if (dto.phones) {
-      user.phones =
-        dto.phones.map((p) => ({
-          phone: p.phone,
-        })) ?? [];
-    }
-
-    if (dto.relativeMobiles) {
-      user.relativeMobiles =
-        dto.relativeMobiles.map((r) => ({
-          name: r.name,
-          relationship: r.relationship,
-          mobile: r.mobile,
-        })) ?? [];
-    }
-
-    const { mobiles, phones, relativeMobiles, profile, signature, ...rest } =
-      dto;
+    const { profile, ...rest } = dto;
 
     Object.assign(user, rest);
 

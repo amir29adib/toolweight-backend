@@ -6,9 +6,6 @@ import { UserEntity } from './user.entity';
 import { UserRepository } from './user.repository';
 import { UserService } from './user.service';
 import { UserController } from './user.controller';
-import { UserMobileEntity } from './entities/user-mobile.entity';
-import { UserPhoneEntity } from './entities/user-phone.entity';
-import { UserRelativeMobileEntity } from './entities/user-relative-mobile.entity';
 import { UserGroupRepository } from './group/user-group.repository';
 import { UserGroupService } from './group/user-group.service';
 import { UserGroupController } from './group/user-group.controller';
@@ -20,9 +17,6 @@ import { FilesModule } from 'src/files/files.module';
       UserEntity,
       UserGroupEntity,
       UserGroupAccessEntity,
-      UserMobileEntity,
-      UserPhoneEntity,
-      UserRelativeMobileEntity,
     ]),
     FilesModule,
   ],
