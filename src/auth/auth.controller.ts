@@ -8,7 +8,7 @@ import {
   ApiOkResponse,
   ApiBearerAuth,
 } from '@nestjs/swagger';
-import { JwtAuthGuard } from './jwt-auth.guard';
+import { JwtAuthGuard } from './guards/jwt-auth.guard';
 import { OtpLoginDto } from './dto/otp-login.dto';
 import { OtpVerifyDto } from './dto/otp-verify.dto';
 

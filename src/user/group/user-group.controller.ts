@@ -23,7 +23,7 @@ import {
 import { UserGroupService } from './user-group.service';
 import { CreateUserGroupDto } from './dto/create-user-group.dto';
 import { UpdateUserGroupDto } from './dto/update-user-group.dto';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { PaginationQuery } from 'src/common/dto/pagination-query.dto';
 import { FiltersAllowedPipe } from 'src/common/pipes/filters-allowed.pipe';
 

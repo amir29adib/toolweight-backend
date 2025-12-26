@@ -11,7 +11,7 @@ import {
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { ApiFile } from 'src/common/decorators/api-file.decorator';
 import { FileValidatePipe } from 'src/common/pipes/file-validate.pipe';
 import { FilesService } from './files.service';

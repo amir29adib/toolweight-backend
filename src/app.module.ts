@@ -13,6 +13,8 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { ObjectStorageModule } from './object-storage/object-storage.module';
 import { FilesService } from './files/files.service';
 import { FilesModule } from './files/files.module';
+import { AthleteModule } from './athlete/athlete.module';
+import { BodyCompositionModule } from './athlete/body-composition/body-composition.module';
 
 @Module({
   imports: [
@@ -27,6 +29,8 @@ import { FilesModule } from './files/files.module';
     ScheduleModule.forRoot(),
     ObjectStorageModule,
     FilesModule,
+    AthleteModule,
+    BodyCompositionModule,
   ],
   controllers: [AppController],
   providers: [AppService, FilesService],
